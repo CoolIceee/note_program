@@ -1,0 +1,55 @@
+.scroll_block {
+  width: 250px;
+  height: 619px;
+  overflow: scroll;
+  background-color: rgb(61, 61, 61);
+}
+
+.note_title {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: rgb(35, 35, 35);
+}
+.bottom_title{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px rgba(250, 250, 250, 0.226) solid;
+  height: 40px;
+  border-bottom-left-radius: 20px;
+  padding: 0 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: rgb(35, 35, 35);
+}
+.sidebar_menu {
+  padding: 0;
+  margin: 0;
+}
+
+.block_notes_menu {
+  width: 230px;
+  display: block;
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  padding: 0 0 0 20px;
+  font-size: 15px;
+  background-color: rgb(61, 61, 61);
+  transition-duration: 0.3s;
+  font-family: 'Roboto Mono', monospace;
+  height: 40px;
+}
+.block_notes_menu:hover {
+  background-color: rgb(117, 117, 117);
+  transition-duration: 0.3s;
+}
+.notes_menu {
+  width: 250px;
+  color: #fff;
+  list-style-type: none;
+}
