@@ -1,19 +1,20 @@
-# MERN NOTES
-### Приложение для тестового задания 
+# MERN NOTES 
+### Тестовое задание 
 
 Функционал приложения:
 - Добавление заметок
 - Изменение заметок
 - Удаление заметок
 - Поиск по заметкам
+- Автосохранение заметок
 
 При разработке проекта использовали:
-- JavaScript / React (Hooks);
-- Redux / redux-toolkit;
-- React-router-dom для роутинга;
-- REST API, асинхронные запросы;
-- Ant;
-- NodeJS, express, mongoDB,
+- JavaScript / React (Hooks)
+- Redux / redux-toolkit
+- React-router-dom для роутинга
+- REST API, асинхронные запросы
+- Ant
+- NodeJS, express, mongoDB
 
 ## Запуск проекта
 
