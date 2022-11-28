@@ -6,9 +6,8 @@ import Header from './Header'
 import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Empty from './Empty'
-function App(props) {
+function App() {
   const posts = useSelector(state => state.post.posts)
- 
   return (
     <div className='container'>
       <Header />

@@ -1,10 +1,9 @@
 .block_text {
-  width: 949px;
+  width: 948px;
   height: 100%;
-  border-left: 1px rgba(250, 250, 250, 0.226) solid;
-  border-bottom: 1px rgba(250, 250, 250, 0.226) solid;
+  border-left: 2px rgba(250, 250, 250, 0.226) solid;
   background-color: rgb(19, 19, 19);
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 5px;
   font-size: 40px;
 }
 .main_end {
@@ -27,28 +26,9 @@
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
   padding: 10px 20px;
-}
-.basic_text {
-  width: 95%;
-  height: 85%;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  word-break: break-all;
-  display: flex;
-  overflow: scroll;
-  padding: 0 20px;
-}
-.edit_field {
-  width: 949px;
-  height: 100%;
-  border-left: 1px rgba(250, 250, 250, 0.226) solid;
-  border-bottom: 1px rgba(250, 250, 250, 0.226) solid;
-  background-color: rgb(19, 19, 19);
-  border-bottom-right-radius: 20px;
-  font-size: 40px;
-}
-.header_block {
-  width: 100%;
+  position: relative;
+  top: 3.5px;
+  height: 40px;
 }
 .header_input {
   width: 90%;
@@ -56,20 +36,61 @@
   height: 40px;
   border: 0;
   color: #fff;
+  padding: 10px 20px;
   font-size: 25px;
   font-family: 'Roboto Mono', monospace;
   outline: none;
-  padding: 5px 20px;
 }
+.basic_text {
+  width: 90%;
+  height: 85%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  word-break: break-all;
+  display: flex;
+  position: relative;
+  overflow: scroll;
+  padding: 0 20px;
+  white-space: pre-wrap;
+}
+.edit_field {
+  width: 948px;
+  height: 100%;
+  border-left: 2px rgba(250, 250, 250, 0.226) solid;
+  background-color: rgb(19, 19, 19);
+  border-bottom-right-radius: 5px;
+  font-size: 40px;
+}
+.header_block {
+  width: 100%;
+}
+
 .notes {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   width: 90%;
-   border: 0;
+  border: 0;
   height: 560px;
-   outline: none;
-   color: #fff;
+  padding: 0px 20px;
+  outline: none;
+  color: #fff;
   background-color: rgb(19, 19, 19);
-  padding: 1px 20px;
-  resize: none; 
+
+  resize: none;
+}
+
+.loading {
+  font-weight: bold;
+  display: inline-block;
+  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
+}
+
+@keyframes l {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
 }

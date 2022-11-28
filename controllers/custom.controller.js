@@ -21,23 +21,23 @@ module.exports.customController = {
   },
   updatePost: async (req, res) => {
     try {
-      const { header, text } = req.body
+      const { header, text, dataTime } = req.body
       await Custom.findByIdAndUpdate(req.params.id, {
         header,
         text,
         dataTime,
       })
       res.json('Изменено')
-    } catch {
+    } catch (e) {
       res
         .status(404)
-        .json({ message: 'что-то пошло не так, повторите попытку!' })
+        .json({ message: 'что-то пошло не так, повторите попытку!' + e })
     }
   },
   deletePost: async (req, res) => {
     try {
       await Custom.findByIdAndDelete(req.params.id)
-      res.json('Удалено')
+      res.json('ахМАТ')
     } catch {
       res
         .status(404)

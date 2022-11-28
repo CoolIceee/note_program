@@ -1,19 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
-
 const initialState = {
   isLoading: false,
   posts: [],
   onePost: [],
   errorMessage: '',
+  textInputString: '',
   editorMode: false,
+  deleteMode: false,
 }
-
 export const postCreate = createAsyncThunk(
   'create/post',
   async ({ dataTime }, thunkAPI) => {
     try {
-      console.log(dataTime)
       const res = await axios.post('http://localhost:9999/api/add', {
         dataTime,
       })
@@ -25,19 +24,21 @@ export const postCreate = createAsyncThunk(
 )
 export const postUpdate = createAsyncThunk(
   'update/post',
-  async ({ header, text, id }, thunkAPI) => {
+  async ({ header, text, dataTime, id }, thunkAPI) => {
+    console.log(header, text, dataTime)
     try {
       const res = await axios.post(`http://localhost:9999/api/update/${id}`, {
         header,
         text,
+        dataTime,
       })
+
       return res.data
     } catch (error) {
       thunkAPI.rejectWithValue(error.message)
     }
   }
 )
-
 export const postsGet = createAsyncThunk('get/post', async (_, thunkAPI) => {
   try {
     const res = await axios.get('http://localhost:9999/api/get')
@@ -46,7 +47,6 @@ export const postsGet = createAsyncThunk('get/post', async (_, thunkAPI) => {
     thunkAPI.rejectWithValue(error.message)
   }
 })
-
 export const postsOneGet = createAsyncThunk(
   'get/one/post',
   async (id, thunkAPI) => {
@@ -58,7 +58,17 @@ export const postsOneGet = createAsyncThunk(
     }
   }
 )
-
+export const postsOneDelete = createAsyncThunk(
+  'get/one/delete',
+  async (id, thunkAPI) => {
+    try {
+      const res = await axios.delete(`http://localhost:9999/api/delete/${id}`)
+      return res.data
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message)
+    }
+  }
+)
 const post = createSlice({
   name: 'post',
   initialState,
@@ -89,8 +99,14 @@ const post = createSlice({
         state.onePost = action.payload
         state.isLoading = false
       })
-      .addCase('edit', (state, action) => {
+      .addCase('edit/posts', (state, action) => {
         state.editorMode = !state.editorMode
+      })
+      .addCase('delete/posts', (state, action) => {
+        state.deleteMode = !state.deleteMode
+      })
+      .addCase('input/search', (state, action) => {
+        state.textInputString = action.payload
       })
   },
 })
