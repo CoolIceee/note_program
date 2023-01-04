@@ -10,6 +10,7 @@ function App() {
   const posts = useSelector(state => state.post.posts)
   return (
     <div className='container'>
+      
       <Header />
       <div className='section'>
         <div className='sidebar'>
