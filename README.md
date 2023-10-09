@@ -9,7 +9,7 @@
 - Автосохранение заметок
 
 При разработке проекта использовали:
-- JavaScript / React (Hooks)
+- JavaScript / React 
 - Redux / redux-toolkit
 - React-router-dom для роутинга
 - REST API, асинхронные запросы
